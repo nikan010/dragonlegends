@@ -1,30 +1,19 @@
-
 <?php
-if ($_SERVER["REQUEST_METHOD"]  == "GET") {
-    echo "Er is gepost<br>";
-    print_r($_GET);
-
-    //conect database
+// Connect to database
 include "connectcrud.php";
 
-//maak een query
-$sql = "DELETE FROM vuurwerk WHERE id = :id";
-//prepare  query
-$query = $conn->prepare($sql);
-//uitvoeren
-$status = $query->execute(
-    [
-        ':id'=>$_GET['id']
-       
-    ]
-);
-if($status == true){
-    echo "<script>alert(toevoegen is gelukt)</script>";
-    echo "<script>location.replace(homep.php); </script>";
-    header("Location: homepcrud.php");
-} else {
-    echo "<script>alert(toevoegen is niet gelukt)</script>";
-}
-}
+// Check if the id is set in the URL
+if(isset($_GET['id'])){
+    // Prepare and execute the delete query
+    $sql = "DELETE FROM vuurwerk WHERE vuurwerkid = :vuurwerkid";
+    $stmt = $conn->prepare($sql);
+    $status = $stmt->execute([':vuurwerkid' => $_GET['id']]);
 
+    if($status){
+        echo "<script>alert('Verwijderen is gelukt');</script>";
+        echo "<script>location.href = 'homepcrud.php';</script>";
+    } else {
+        print_r($stmt->errorInfo());
+    }
+}
 ?>

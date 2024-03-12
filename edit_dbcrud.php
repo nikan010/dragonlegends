@@ -21,7 +21,7 @@ include "connectcrud.php";
         kleuren = :kleuren,
         stijghoogte = :stijghoogte,
         articlenummer = :articlenummer,
-  WHERE vuurwerk id = :vuurwerk id";
+  WHERE vuurwerkid = :vuurwerkid";
 
   //prepare query
   $stmt = $conn->prepare($sql);
@@ -36,7 +36,7 @@ include "connectcrud.php";
     ':kleuren'=>$_POST['kleuren'],
     ':stijghoogte'=>$_POST['stijghoogte'],
     ':articlenummer'=>$_POST['articlenummer'],
-    ':vuurwerk id'=>$_POST['vuurwerk id'],
+    ':vuurwerkid'=>$_POST['vuurwerkid'],
   ]);
 
   if ($status) {

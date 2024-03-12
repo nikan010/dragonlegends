@@ -10,11 +10,11 @@
 include "connectcrud.php";
 
 //maak een query
-$sql = "SELECT * FROM vuurwerk WHERE vuurwerk id = :vuurwerk id";
+$sql = "SELECT * FROM vuurwerk WHERE vuurwerkid = :vuurwerkid";
 //prepare  query
 $stmt = $conn->prepare($sql);
 //uitvoeren
-$stmt->execute([':vuurwerk id'=>$_GET['vuurwerk id']]);
+$stmt->execute([':vuurwerkid'=>$_GET['vuurwerkid']]);
 //ophalen alle data
 $result = $stmt->fetch(PDO::FETCH_ASSOC);
 
@@ -36,7 +36,7 @@ print_r($result);
 
 <form action="edit_db.php" method="post">
 
-    <input type="hidden" id="vuurwerk id" name="vuurwerk id" required value="<?php echo $result['vuurwerk id']; ?>"><br>
+    <input type="hidden" id="vuurwerkid" name="vuurwerkid" required value="<?php echo $result['vuurwerkid']; ?>"><br>
 
     <label for="merk">Merk:</label>
     <input type="text" id="merk" name="merk" required value="<?php echo $result['merk']; ?>"><br>

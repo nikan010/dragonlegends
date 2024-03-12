@@ -31,7 +31,7 @@ echo "<tr>
 <th>foto</th>
 <th>edit</th>
 <th>delete</th>
-<th>vuurwerk id</th>
+<th>vuurwerkid</th>
 </tr>
 ";
 
@@ -47,9 +47,9 @@ foreach ($result as $row) {
     echo "<td>" . $row['stijghoogte'] . "</td>";
     echo "<td>" . $row['articlenummer'] . "</td>";
     echo "<td><img src='fotos/waaijer box foto.jpg" .  "'></td>";
-    echo "<td><a href='edit.php?id=" . $row['vuurwerk id'] . "'>" . "wijzig</a></td>";
-    echo "<td><a href='delete.php?id=" . $row['vuurwerk id'] . "'>" . "verwijder</a></td>";
-    echo "<td>". $row['vuurwerk id'] . "</td>";
+    echo "<td><a href='edit.php?id=" . $row['vuurwerkid'] . "'>" . "wijzig</a></td>";
+    echo "<td><a href='deletecrud.php?id=" . $row['vuurwerkid'] . "'>" . "verwijder</a></td>";
+    echo "<td>". $row['vuurwerkid'] . "</td>";
 }
 echo "</table>";
 ?>

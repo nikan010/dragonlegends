@@ -9,10 +9,10 @@
 </head>
 <body>
 
-<h1>vuurwerk Toevoegen</h1>
+<h1>Vuurwerk Toevoegen</h1>
 
 <form action="" method="post">
-  <input type="hidden" id="vuurwerk id" name="vuurwerk id" required value="<?php echo $result['vuurwerk id']; ?>"><br>
+  <input type="hidden" id="vuurwerkid" name="vuurwerkid" required value="<?php echo $result['vuurwerkid']; ?>"><br>
 
 <label for="merk">Merk:</label>
 <input type="text" id="merk" name="merk" required><br>
@@ -63,13 +63,13 @@ $query = $conn->prepare($sql);
 $status = $query->execute(
     [
     ':merk'=>$_POST['merk'],
-    ':kruidgewicht'=>$_POST['kruidgewicht'],
+    ':kruidgewicht'=>$_POST['kruidgewicht'] . 'g',
     ':prijs'=>$_POST['prijs'],
     ':schoten'=>$_POST['schoten'],
-    ':brandtijd'=>$_POST['brandtijd'],
+    ':brandtijd'=>$_POST['brandtijd'] . 's',
     ':effect'=>$_POST['effect'],
     ':kleuren'=>$_POST['kleuren'],
-    ':stijghoogte'=>$_POST['stijghoogte'],
+    ':stijghoogte'=>$_POST['stijghoogte'] . 'm',
     ':articlenummer'=>$_POST['articlenummer'],
     ]
 );
