@@ -4,25 +4,42 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fietsen Formulier</title>
+    <title>vuurwerk Formulier</title>
     <link rel="stylesheet" href="stylecrud.css">
 </head>
 <body>
 
-<h1>Fietsen Toevoegen</h1>
+<h1>vuurwerk Toevoegen</h1>
 
 <form action="" method="post">
-    <label for="merk">Merk:</label>
-    <input type="text" id="merk" name="merk" required><br>
+  <input type="hidden" id="vuurwerk id" name="vuurwerk id" required value="<?php echo $result['vuurwerk id']; ?>"><br>
 
-    <label for="type">Type:</label>
-    <input type="text" id="type" name="type" required><br>
+<label for="merk">Merk:</label>
+<input type="text" id="merk" name="merk" required><br>
 
-    <label for="prijs">Prijs:</label>
-    <input type="number" id="prijs" name="prijs" required><br>
+<label for="kruidgewicht">kruidgewicht:</label>
+<input type="text" id="kruidgewicht" name="kruidgewicht" required><br>
 
-    <label for="foto">Foto URL:</label>
-    <input type="text" id="foto" name="foto"><br>
+<label for="prijs">Prijs:</label>
+<input type="number" id="prijs" name="prijs" required><br>
+
+<label for="schoten">schoten:</label>
+<input type="number" id="schoten" name="schoten" required><br>
+
+<label for="brandtijd">brandtijd:</label>
+<input type="text" id="brandtijd" name="brandtijd" required><br>
+
+<label for="effect">effect:</label>
+<input type="text" id="effect" name="effect" required><br>
+
+<label for="kleuren">kleuren:</label>
+<input type="text" id="kleuren" name="kleuren" required><br>
+
+<label for="stijghoogte">stijghoogte:</label>
+<input type="text" id="stijghoogte" name="stijghoogte" required><br>
+
+<label for="articlenummer">articlenummer:</label>
+<input type="text" id="articlenummer" name="articlenummer" required><br>
 
     <input type="submit" value="Toevoegen">
 </form>
@@ -38,17 +55,22 @@ if ($_SERVER["REQUEST_METHOD"]  == "POST") {
 include "connectcrud.php";
 
 //maak een query
-$sql = "INSERT INTO fietsen (merk, kruidgewicht, prijs, schoten, brandtijd, effect, kleuren, stijghoogte, articlenummer) 
-VALUES (:merk, :type, :prijs, :foto);";
+$sql = "INSERT INTO vuurwerk (merk, kruidgewicht, prijs, schoten, brandtijd, effect, kleuren, stijghoogte, articlenummer) 
+VALUES (:merk, :kruidgewicht, :prijs, :schoten, :brandtijd, :effect, :kleuren, :stijghoogte, :articlenummer);";
 //prepare  query
 $query = $conn->prepare($sql);
 //uitvoeren
 $status = $query->execute(
     [
-        ':merk'=>$_POST['merk'],
-        ':type'=>$_POST['type'],
-        ':prijs'=>$_POST['prijs'],
-        ':foto'=>$_POST['foto']
+    ':merk'=>$_POST['merk'],
+    ':kruidgewicht'=>$_POST['kruidgewicht'],
+    ':prijs'=>$_POST['prijs'],
+    ':schoten'=>$_POST['schoten'],
+    ':brandtijd'=>$_POST['brandtijd'],
+    ':effect'=>$_POST['effect'],
+    ':kleuren'=>$_POST['kleuren'],
+    ':stijghoogte'=>$_POST['stijghoogte'],
+    ':articlenummer'=>$_POST['articlenummer'],
     ]
 );
 if($status == true){

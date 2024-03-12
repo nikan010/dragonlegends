@@ -4,17 +4,17 @@
         echo "mijn id is: " . $_GET['id'];
 
         //opvragen data van het id (record uit de tabel fietsen)
-        //select * FROM fietsen WHERE id = $_GET['id']
+        //select * FROM vuuwerk WHERE vuurwerkid = $_GET['id']
         
 //conect database
 include "connectcrud.php";
 
 //maak een query
-$sql = "SELECT * FROM fietsen WHERE id = :id";
+$sql = "SELECT * FROM vuurwerk WHERE vuurwerk id = :vuurwerk id";
 //prepare  query
 $stmt = $conn->prepare($sql);
 //uitvoeren
-$stmt->execute([':id'=>$_GET['id']]);
+$stmt->execute([':vuurwerk id'=>$_GET['vuurwerk id']]);
 //ophalen alle data
 $result = $stmt->fetch(PDO::FETCH_ASSOC);
 
@@ -36,16 +36,35 @@ print_r($result);
 
 <form action="edit_db.php" method="post">
 
-    <input type="hidden" id="merk" name="id" required value="<?php echo $result['id']; ?>"><br>
+    <input type="hidden" id="vuurwerk id" name="vuurwerk id" required value="<?php echo $result['vuurwerk id']; ?>"><br>
+
     <label for="merk">Merk:</label>
     <input type="text" id="merk" name="merk" required value="<?php echo $result['merk']; ?>"><br>
 
-    <label for="type">Type:</label>
-    <input type="text" id="type" name="type" required value="<?php echo $result['type']; ?>"><br>
+    <label for="kruidgewicht">kruidgewicht:</label>
+    <input type="text" id="kruidgewicht" name="kruidgewicht" required value="<?php echo $result['kruidgewicht']; ?>"><br>
 
     <label for="prijs">Prijs:</label>
     <input type="number" id="prijs" name="prijs" required value="<?php echo $result['prijs']; ?>"><br>
 
+    <label for="schoten">schoten:</label>
+    <input type="number" id="schoten" name="schoten" required value="<?php echo $result['schoten']; ?>"><br>
+
+    <label for="brandtijd">brandtijd:</label>
+    <input type="text" id="brandtijd" name="brandtijd" required value="<?php echo $result['brandtijd']; ?>"><br>
+    
+    <label for="effect">effect:</label>
+    <input type="text" id="effect" name="effect" required value="<?php echo $result['effect']; ?>"><br>
+    
+    <label for="kleuren">kleuren:</label>
+    <input type="text" id="kleuren" name="kleuren" required value="<?php echo $result['kleuren']; ?>"><br>
+    
+    <label for="stijghoogte">stijghoogte:</label>
+    <input type="text" id="stijghoogte" name="stijghoogte" required value="<?php echo $result['stijghoogte']; ?>"><br>
+
+    <label for="articlenummer">articlenummer:</label>
+    <input type="text" id="articlenummer" name="articlenummer" required value="<?php echo $result['articlenummer']; ?>"><br>
+    
     <label for="foto">Foto URL:</label>
     <input type="text" id="foto" name="foto"><br>
 

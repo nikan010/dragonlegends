@@ -6,10 +6,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     print_r($_POST);
 
 //doe een update in de database
-/*UPDATE `vuurwerk` SET `merk` = 'batavus :)',
- `type` = 'blockbusters', `prijs` = '6993',
-  `foto` = 'img3.jpgw' WHERE `fietsen`.
-  `id` = 1;*/
+
 //conect database
 include "connectcrud.php";
 
@@ -24,7 +21,7 @@ include "connectcrud.php";
         kleuren = :kleuren,
         stijghoogte = :stijghoogte,
         articlenummer = :articlenummer,
-  WHERE vuurwerkid = :id";
+  WHERE vuurwerk id = :vuurwerk id";
 
   //prepare query
   $stmt = $conn->prepare($sql);
@@ -39,7 +36,7 @@ include "connectcrud.php";
     ':kleuren'=>$_POST['kleuren'],
     ':stijghoogte'=>$_POST['stijghoogte'],
     ':articlenummer'=>$_POST['articlenummer'],
-    ':vuurwerkid'=>$_POST['id'],
+    ':vuurwerk id'=>$_POST['vuurwerk id'],
   ]);
 
   if ($status) {
