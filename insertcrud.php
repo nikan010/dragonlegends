@@ -9,13 +9,22 @@
 </head>
 <body>
 
-<h1>Vuurwerk Toevoegen</h1>
+<h1>vuurwerk Toevoegen</h1>
 
 <form action="" method="post">
   <input type="hidden" id="vuurwerkid" name="vuurwerkid" required value="<?php echo $result['vuurwerkid']; ?>"><br>
 
+<label for="foto">Foto URL:</label>
+<input type="text" id="foto" name="foto"><br>
+
+<label for="naam">Naam:</label>
+<input type="text" id="naam" name="naam" required><br>
+
 <label for="merk">Merk:</label>
 <input type="text" id="merk" name="merk" required><br>
+
+<label for="merk">soort:</label>
+<input type="text" id="soort" name="soort" required><br>
 
 <label for="kruidgewicht">kruidgewicht:</label>
 <input type="text" id="kruidgewicht" name="kruidgewicht" required><br>
@@ -55,22 +64,25 @@ if ($_SERVER["REQUEST_METHOD"]  == "POST") {
 include "connectcrud.php";
 
 //maak een query
-$sql = "INSERT INTO vuurwerk (merk, kruidgewicht, prijs, schoten, brandtijd, effect, kleuren, stijghoogte, articlenummer) 
-VALUES (:merk, :kruidgewicht, :prijs, :schoten, :brandtijd, :effect, :kleuren, :stijghoogte, :articlenummer);";
+$sql = "INSERT INTO vuurwerk (foto, naam, merk, soort, kruidgewicht, prijs, schoten, brandtijd, effect, kleuren, stijghoogte, articlenummer) 
+VALUES (:foto, :naam, :merk, :soort, :kruidgewicht, :prijs, :schoten, :brandtijd, :effect, :kleuren, :stijghoogte, :articlenummer);";
 //prepare  query
 $query = $conn->prepare($sql);
 //uitvoeren
 $status = $query->execute(
     [
+    ':foto'=>$_POST['foto'],
+    ':naam'=>$_POST['naam'],
     ':merk'=>$_POST['merk'],
-    ':kruidgewicht'=>$_POST['kruidgewicht'] . 'g',
+    ':soort'=>$_POST['soort'],
+    ':kruidgewicht'=>$_POST['kruidgewicht'],
     ':prijs'=>$_POST['prijs'],
     ':schoten'=>$_POST['schoten'],
-    ':brandtijd'=>$_POST['brandtijd'] . 's',
+    ':brandtijd'=>$_POST['brandtijd'],
     ':effect'=>$_POST['effect'],
     ':kleuren'=>$_POST['kleuren'],
-    ':stijghoogte'=>$_POST['stijghoogte'] . 'm',
-    ':articlenummer'=>$_POST['articlenummer'],
+    ':stijghoogte'=>$_POST['stijghoogte'],
+    ':articlenummer'=>$_POST['articlenummer'],    
     ]
 );
 if($status == true){

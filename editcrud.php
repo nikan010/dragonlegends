@@ -9,12 +9,13 @@
 //conect database
 include "connectcrud.php";
 
+
 //maak een query
 $sql = "SELECT * FROM vuurwerk WHERE vuurwerkid = :vuurwerkid";
 //prepare  query
 $stmt = $conn->prepare($sql);
 //uitvoeren
-$stmt->execute([':vuurwerkid'=>$_GET['vuurwerkid']]);
+$stmt->execute([':vuurwerkid' => $_GET['id']]);
 //ophalen alle data
 $result = $stmt->fetch(PDO::FETCH_ASSOC);
 
@@ -27,19 +28,28 @@ print_r($result);
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fietsen Formulier</title>
+    <title>vuurwerk Formulier</title>
     <link rel="stylesheet" href="stylecrud.css">
 </head>
 <body>
 
-<h1>Fietsen Toevoegen</h1>
+<h1>vuurwerk Toevoegen</h1>
 
-<form action="edit_db.php" method="post">
+<form action="edit_dbcrud.php" method="post">
 
-    <input type="hidden" id="vuurwerkid" name="vuurwerkid" required value="<?php echo $result['vuurwerkid']; ?>"><br>
+<input type="hidden" id="vuurwerkid" name="vuurwerkid" required value="<?php echo $result['vuurwerkid']; ?>"><br>
+
+    <label for="foto">Foto URL:</label>
+    <input type="text" id="foto" name="foto"><br>
+      
+    <label for="naam">naam:</label>
+    <input type="text" id="naam" name="naam" required value="<?php echo $result['naam']; ?>"><br>
 
     <label for="merk">Merk:</label>
     <input type="text" id="merk" name="merk" required value="<?php echo $result['merk']; ?>"><br>
+
+    <label for="soort">Soort:</label>
+    <input type="text" id="soort" name="soort" required value="<?php echo $result['soort']; ?>"><br>
 
     <label for="kruidgewicht">kruidgewicht:</label>
     <input type="text" id="kruidgewicht" name="kruidgewicht" required value="<?php echo $result['kruidgewicht']; ?>"><br>
@@ -64,9 +74,9 @@ print_r($result);
 
     <label for="articlenummer">articlenummer:</label>
     <input type="text" id="articlenummer" name="articlenummer" required value="<?php echo $result['articlenummer']; ?>"><br>
-    
-    <label for="foto">Foto URL:</label>
-    <input type="text" id="foto" name="foto"><br>
+   
+   
+
 
     <input type="submit" value="Toevoegen">
 </form>

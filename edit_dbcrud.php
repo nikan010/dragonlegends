@@ -5,44 +5,56 @@
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
     print_r($_POST);
 
-//doe een update in de database
+    //doe een update in de database
 
-//conect database
-include "connectcrud.php";
+    //conect database
+    include "connectcrud.php";
 
-  $sql = "
-        UPDATE vuurwerk SET
-        merk = :merk,
-        kruidgewicht = :kruidgewicht,
-        prijs = :prijs
-        schoten = :schoten,
-        brandtijd = :brandtijd,
-        effect = :effect,
-        kleuren = :kleuren,
-        stijghoogte = :stijghoogte,
-        articlenummer = :articlenummer,
-  WHERE vuurwerkid = :vuurwerkid";
+    //UPDATE `vuurwerk` SET `merk` = '12', `kruidgewicht` = '11', `schoten` = '1', 
+    //`brandtijd` = '1', `effect` = '1', `kleuren` = '1', `stijghoogte` = '1', `articlenummer` = '1' 
+    // WHERE `vuurwerk`.`vuurwerkid` = 1;
 
-  //prepare query
-  $stmt = $conn->prepare($sql);
-  //uitvoeren
-  $status = $stmt->execute([
-    ':merk'=>$_POST['merk'],
-    ':kruidgewicht'=>$_POST['kruidgewicht'],
-    ':prijs'=>$_POST['prijs'],
-    ':schoten'=>$_POST['schoten'],
-    ':brandtijd'=>$_POST['brandtijd'],
-    ':effect'=>$_POST['effect'],
-    ':kleuren'=>$_POST['kleuren'],
-    ':stijghoogte'=>$_POST['stijghoogte'],
-    ':articlenummer'=>$_POST['articlenummer'],
-    ':vuurwerkid'=>$_POST['vuurwerkid'],
-  ]);
+    $sql = "
+            UPDATE vuurwerk SET
+            foto = :foto,
+            naam = :naam,
+            merk = :merk,
+            soort = :soort,
+            kruidgewicht = :kruidgewicht,
+            prijs = :prijs,
+            schoten = :schoten,
+            brandtijd = :brandtijd,
+            effect = :effect,
+            kleuren = :kleuren,
+            stijghoogte = :stijghoogte,
+            articlenummer = :articlenummer            
+      WHERE vuurwerkid = :vuurwerkid";
 
-  if ($status) {
-    header("Location: homepcrud.php");
+    //prepare query
+    $stmt = $conn->prepare($sql);
+
+    //bind parameters
+    $stmt->bindParam(':foto', $_POST['foto']);
+    $stmt->bindParam(':naam', $_POST['naam']);
+    $stmt->bindParam(':merk', $_POST['merk']);
+    $stmt->bindParam(':soort', $_POST['soort']);
+    $stmt->bindParam(':kruidgewicht', $_POST['kruidgewicht']);
+    $stmt->bindParam(':prijs', $_POST['prijs']);
+    $stmt->bindParam(':schoten',$_POST['schoten']);
+    $stmt->bindParam(':brandtijd', $_POST['brandtijd']);
+    $stmt->bindParam(':effect', $_POST['effect']);
+    $stmt->bindParam(':kleuren', $_POST['kleuren']);
+    $stmt->bindParam(':stijghoogte', $_POST['stijghoogte']);
+    $stmt->bindParam(':articlenummer', $_POST['articlenummer']);
+    $stmt->bindParam(':vuurwerkid', $_POST['vuurwerkid']);
+    
+
+    //execute query
+    $status = $stmt->execute();
+
+    if ($status) {
+        header("Location: homepcrud.php");
     } else {
         echo "Update is fout gegaan <br>";
     }
 }
-?>
