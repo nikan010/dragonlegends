@@ -42,27 +42,28 @@ session_start();
 
         /* Bij elk vak voeg je een achtergrondafbeelding toe */
         .box:nth-child(1) {
-            background-image: url("fotos/waaijer.jpg");
+            background-image: url("img/waaijer.jpg");
+            
         }
 
         .box:nth-child(2) {
-            background-image: url("fotos/groot cake.jpg");
+            background-image: url("img/groot cake.jpg");
         }
 
         .box:nth-child(3) {
-            background-image: url("fotos/small cake.jpg");
+            background-image: url("img/small cake.jpg");
         }
 
         .box:nth-child(4) {
-            background-image: url("fotos/thunderking.jpg");
+            background-image: url("img/thunderking.jpg");
         }
 
         .box:nth-child(5) {
-            background-image: url("fotos/fire fun.jpg");
+            background-image: url("img/fire fun.jpg");
         }
 
         .box:nth-child(6) {
-            background-image: url("fotos/nitraten.jpg");
+            background-image: url("img/nitraten.jpg");
         }
 
         .navbar {
@@ -195,9 +196,9 @@ session_start();
     hello, <?php echo $user_data['user_name']; ?>
     <div class="container">    
   
-        <div class="box">
-            
+        <div class="box" onclick="location.href='waaijer.php';">
             <h2>Vak 1</h2>
+           
         </div>
         <div class="box">
             <h2>Vak 2</h2>
@@ -207,6 +208,7 @@ session_start();
         </div>
         <div class="box">
             <h2>Vak 4</h2>
+            
         </div>
         <div class="box">
             <h2>Vak 5</h2>
