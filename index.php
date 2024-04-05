@@ -184,7 +184,7 @@ session_start();
 </style>
 <body>
 <div class="navbar">
-        <a href="https://www.techniekcollegerotterdam.nl/"><img class="pipi" src="img/tcrlogo.png" alt="TCR"></a>
+        <a href="https://www.techniekcollegerotterdam.nl/"><img class="pipi" src="img/logo.png" width="15%" alt="TCR"></a>
         <div class="nav-links">
         <a href="homepcrud.php">crud</a>
         <a href="logout.php">logout</a>
