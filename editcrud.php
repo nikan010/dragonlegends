@@ -32,8 +32,8 @@ print_r($result);
     <link rel="stylesheet" href="stylecrud.css">
 </head>
 <body>
-<!-- hier is de tabel voor het editen van de informatie van de producten -->
-<h1>vuurwerk Wijzigen</h1>
+
+<h1>vuurwerk Toevoegen</h1>
 
 <form action="edit_dbcrud.php" method="post">
 

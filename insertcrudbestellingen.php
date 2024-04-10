@@ -8,6 +8,11 @@
     <link rel="stylesheet" href="stylecrud.css">
 </head>
 <body>
+<nav>
+<?php 
+include "nav.php"
+?>
+</nav>
 
 <h1>Bestelling Toevoegen</h1>
 <!-- hier is de tabel voor het toevoegen van de informatie van de bestelling -->

@@ -27,20 +27,15 @@ $user_data = check_login($con);
 
 >>>>>>> Stashed changes
 <body>
-<!-- Navigatiebalk -->
 <div class="navbar">
-    <a href="https://www.techniekcollegerotterdam.nl/"><img class="pipi" src="img/logo.png" width="15%" alt="TCR"></a>
-    <div class="nav-links">
+        <a href="https://www.techniekcollegerotterdam.nl/"><img class="pipi" src="img/logo.png" width="15%" alt="TCR"></a>
+        <div class="nav-links">
         <a href="homepcrud.php">CRUD Vuurwerk</a>
         <a href="homepcrudbestellingen.php">CRUD Bestellingen</a>
-<<<<<<< Updated upstream
         <a href="mainklant.php">CRUD klant</a>
         <a href="logout.php">logout</a>
        
             </div>
-=======
-        <a href="logout.php">Logout</a>
->>>>>>> Stashed changes
     </div>
 </div>
 

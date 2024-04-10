@@ -9,7 +9,6 @@
 </head>
 <body>
 
-
 <h1>vuurwerk Toevoegen</h1>
 <!-- hier is de tabel voor het toevoegen van de informatie van de producten -->
 <form action="" method="post">
