@@ -32,6 +32,12 @@ print_r($result);
     <link rel="stylesheet" href="stylecrud.css">
 </head>
 <body>
+<nav>
+<?php 
+include "nav.php"
+?>
+</nav>
+
 
 <h1>Bestelling Aanpassen</h1>
 

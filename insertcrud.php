@@ -9,6 +9,12 @@
 </head>
 <body>
 
+<nav>
+<?php 
+include "nav.php"
+?>
+</nav>
+
 <h1>vuurwerk Toevoegen</h1>
 
 <form action="" method="post">

@@ -15,15 +15,9 @@ session_start();
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
-<div class="navbar">
-        <a href="https://www.techniekcollegerotterdam.nl/"><img class="pipi" src="img/logo.png" width="15%" alt="TCR"></a>
-        <div class="nav-links">
-        <a href="homepcrud.php">CRUD Vuurwerk</a>
-        <a href="homepcrudbestellingen.php">CRUD Bestellingen</a>
-        <a href="mainklant.php">CRUD klant</a>
-        <a href="logout.php">logout</a>
-       
-            </div>
+<?php
+include "nav.php"
+?>
     </div>
     <h1>This is the index page</h1>
         <br>

@@ -7,9 +7,16 @@
     <link rel="stylesheet" href="stylecrud.css">
 </head>
 <body>
-    <h1>vuurwerk producten lijst</h1>
+<nav>
+<?php 
+include "nav.php"
+?>
+</nav>
+
+    <h1>Vuurwerk producten lijst</h1>
     <img src="img/img1.jpg" alt="">
     <a href="insertcrud.php">toevoegen</a>
+  
     <?php
     
     include "selectcrud.php"
