@@ -16,6 +16,7 @@ session_start();
 </head>
 <body>
 <?php
+// Hiermee word de nav.php bestand opgehaald en word de Navbar geshowed
 include "nav.php"
 ?>
     </div>

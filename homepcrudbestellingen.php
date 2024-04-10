@@ -16,7 +16,7 @@ include "nav.php"
     <img src="img/img1.jpg" alt="">
     <a href="insertcrudbestellingen.php">toevoegen</a>
     <?php
-    
+    // Hiermee word de selectcrudbestellingen.php bestand opgehaald
     include "selectcrudbestellingen.php"
     
     ?>
