@@ -7,6 +7,7 @@
          <a href="index.php">Home Pagina</a>   
         <a href="homepcrud.php">CRUD Vuurwerk</a>
          <a href="homepcrudbestellingen.php">CRUD Bestellingen</a>
+         <a href="mainklant.php">CRUD Klant</a>
         <a href="logout.php">logout</a>
     
             </div>

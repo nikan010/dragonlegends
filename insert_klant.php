@@ -17,8 +17,17 @@
         }
     }
 ?>
-<html>
-    <body>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crud</title>
+    <link rel="stylesheet" href="klant.css">
+</head>
+<body>
+    <!-- Toevoeging van de klant met de correcte informatie -->
         <form method="post">
         <input type="hidden"  id="naam" name="klantid" required value="<?php echo $row['klantid']; ?>"><br>
 
@@ -37,6 +46,7 @@
        
         
         <br><br>
-        <a href='main.php'>Home</a>
+        <!-- Stuurt je weer terug naar de main page -->
+        <a href='mainklant.php'>Home</a>
     </body>
 </html>

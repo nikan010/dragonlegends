@@ -28,13 +28,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="klant.css">
   <title>Wijzig product</title>
 </head>
 <body>
   <h2>Wijzig product</h2>
   <form method="post">
-
+<!-- Zorgt ervoor dat de correcte informatie ingevoerd word -->
 <input type="hidden"  id="klantid" name="klantid" required value="<?php echo $row['klantid']; ?>"><br>
 
     <label for="naam">Naam:</label>
@@ -49,7 +49,8 @@
     <input type="submit" name="wijzig" value="Wijzig">
   </form>
   <br><br>
-  <a href='main.php'>Home</a>
+  <!-- Stuurt je terug naar main page -->
+  <a href='mainklant.php'>Home</a>
 </body>
 </html>
 
