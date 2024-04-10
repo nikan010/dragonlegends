@@ -32,9 +32,6 @@
 
 
 
-
-}
-
 </style>
 <body>
 <div class="navbar">
