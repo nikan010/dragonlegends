@@ -38,7 +38,7 @@ session_start();
 <body>
 
     <style type="text/css">
-
+            /*stijl voor de text*/
     #text{
 
         height: 25px;
@@ -47,7 +47,7 @@ session_start();
         border: solid thin #aaa;
         width: 100%;
     }
-
+        /*stijl voor de button */
     #button{
 
         padding: 10px;
@@ -56,7 +56,7 @@ session_start();
         background-color: lightblue;
         border: none;
     }
-
+        /*stijl voor de box */
     #box{
 
         background-color: grey;
@@ -68,7 +68,7 @@ session_start();
     </style>
 
     <div id="box">
-
+    <!--hier is de tabel voor het inloggen-->
         <form method="post">
             <div style="font-size: 20px;margin: 10px;color: white;">Signup</div>
 

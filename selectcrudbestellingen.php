@@ -47,7 +47,13 @@ echo "</table>";
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+<<<<<<< Updated upstream
     <style>
+=======
+</head>
+<style>
+        /*stijl voor de body */
+>>>>>>> Stashed changes
  body {
             background-image: url("img/background.jpeg");
             text-align: center;
@@ -55,6 +61,7 @@ echo "</table>";
             background-size: cover;
             color: white;
         }
+            /*stijl voor de table */
 table {
             margin-left: auto;
             margin-right: auto;

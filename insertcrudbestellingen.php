@@ -10,6 +10,7 @@
 <body>
 
 <h1>Bestelling Toevoegen</h1>
+<!-- hier is de tabel voor het toevoegen van de informatie van de bestelling -->
 
 <form action="" method="post">
   <input type="hidden" id="bestelling_id" name="bestelling_id" required value="<?php echo $result['bestelling_id']; ?>"><br>

@@ -1,5 +1,5 @@
 <?php
-
+//hier check hij of je login gegevens goed zijn 
 function check_login($con)
 {
 

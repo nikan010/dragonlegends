@@ -34,7 +34,7 @@ print_r($result);
 <body>
 
 <h1>Bestelling Aanpassen</h1>
-
+<!-- hier is de tabel voor het editen van de informatie van de bestellingen -->
 <form action="edit_bestellingencrud.php" method="post">
 
 <input type="hidden" id="bestelling_id" name="bestelling_id" required value="<?php echo $result['bestelling_id']; ?>"><br>
