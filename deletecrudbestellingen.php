@@ -2,9 +2,9 @@
 // Connect to database
 include "connectcrud.php";
 
-// Check if the id is set in the URL
+// Bekijkt of de ID wordt meegegeven in de URL
 if(isset($_GET['id'])){
-    // Prepare and execute the delete query
+    // Bereid en execute de query voor
     $sql = "DELETE FROM bestelling WHERE bestelling_id = :bestelling_id";
     $stmt = $conn->prepare($sql);
     $status = $stmt->execute([':bestelling_id' => $_GET['id']]);

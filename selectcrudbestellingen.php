@@ -23,6 +23,8 @@ echo "<tr>
 <th>Aantal</th>
 <th>Bedrag</th>
 <th>Klanten ID</th>
+<th>Wijzig</th>
+<th>Verwijder</th>
 <th>Bestelling ID</th>
 </tr>
 ";
@@ -45,8 +47,7 @@ echo "</table>";
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-</head>
-<style>
+    <style>
  body {
             background-image: url("img/background.jpeg");
             text-align: center;
@@ -61,6 +62,8 @@ table {
             background-color: transparent; /* Dit zorgt ervoor dat de achtergrondkleur van de tabel transparant is */
         }
 </style>
+</head>
+
 <body>
     
 </body>

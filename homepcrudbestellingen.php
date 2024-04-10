@@ -6,6 +6,11 @@
     <title>Document</title>
     <link rel="stylesheet" href="stylecrud.css">
 </head>
+<nav>
+    <?php
+include "nav.php"
+?>
+</nav>
 <body>
     <h1>Bestellingen Overzicht</h1>
     <img src="img/img1.jpg" alt="">
