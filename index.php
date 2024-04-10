@@ -188,6 +188,7 @@ session_start();
         <div class="nav-links">
         <a href="homepcrud.php">CRUD Vuurwerk</a>
         <a href="homepcrudbestellingen.php">CRUD Bestellingen</a>
+        <a href="mainklant.php">CRUD klant</a>
         <a href="logout.php">logout</a>
        
             </div>
