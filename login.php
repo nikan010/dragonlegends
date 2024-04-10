@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-
+//hier pakt hij de code van connection en function
     include("connection.php");
     include("functions.php");
 
@@ -56,6 +56,7 @@ session_start();
 </head>
 <body>
     <style type="text/css">
+        /* Stijl voor de text */
         #text{
             height: 25px;
             width: 100%;
@@ -63,7 +64,7 @@ session_start();
             padding: 4px;
             border: solid thin #aaa;
         }
-
+        /* Stijl voor de button */
         #button{
             padding: 10px;
             width: 100px;
@@ -71,7 +72,7 @@ session_start();
             background-color: lightblue;
             border: none;
         }
-
+        /* Stijl voor de box */
         #box {
             background-color: grey;
             margin: auto;

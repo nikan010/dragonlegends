@@ -64,21 +64,6 @@ echo "</table>";
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<style>
- body {
-            background-image: url("img/background.jpeg");
-            text-align: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-            color: white;
-        }
-table {
-            margin-left: auto;
-            margin-right: auto;
-            border: 3px solid white;
-            background-color: transparent; /* Dit zorgt ervoor dat de achtergrondkleur van de tabel transparant is */
-        }
-</style>
 <body>
     
 </body>

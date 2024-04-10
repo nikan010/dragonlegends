@@ -6,14 +6,9 @@
     <title>Document</title>
     <link rel="stylesheet" href="stylecrud.css">
 </head>
-<body>
-<nav>
-<?php 
-include "nav.php"
-?>
-</nav>
 
-    <h1>Vuurwerk producten lijst</h1>
+<body>
+    <h1>vuurwerk producten lijst</h1>
     <img src="img/img1.jpg" alt="">
     <a href="insertcrud.php">toevoegen</a>
   

@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        /*stijl voor de productcontainer */
         .productcontainer {
             border: 5px solid;
             border-radius: 5px;

@@ -17,7 +17,7 @@ include "nav.php"
 </nav>
 
 <h1>vuurwerk Toevoegen</h1>
-
+<!-- hier is de tabel voor het toevoegen van de informatie van de producten -->
 <form action="" method="post">
   <input type="hidden" id="vuurwerkid" name="vuurwerkid" required value="<?php echo $result['vuurwerkid']; ?>"><br>
 

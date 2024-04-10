@@ -1,9 +1,15 @@
 <?php
+// Start de sessie
 session_start();
-        include("connection.php");
-        include("functions.php");
 
-        $user_data = check_login($con);
+// Inclusie van het bestand 'connection.php' dat de databaseverbinding bevat
+include("connection.php");
+
+// Inclusie van het bestand 'functions.php' dat functies bevat voor de gebruikersauthenticatie
+include("functions.php");
+
+// Controleren of de gebruiker is ingelogd
+$user_data = check_login($con);
 ?>
 
 <!DOCTYPE html>
@@ -20,39 +26,46 @@ session_start();
 include "nav.php"
 ?>
     </div>
-    <h1>This is the index page</h1>
-        <br>
-    hello, <?php echo $user_data['user_name']; ?>
-    <div class="container">    
-  
-        <div class="box" onclick="location.href='waaijer.php';">
-            <h2>Vak 1</h2>
-           
-        </div>
-        <div class="box">
-            <h2>Vak 2</h2>
-        </div>
-        <div class="box">
-            <h2>Vak 3</h2>
-        </div>
-        <div class="box">
-            <h2>Vak 4</h2>
-            
-        </div>
-        <div class="box">
-            <h2>Vak 5</h2>
-        </div>
-        <div class="box">
-            <h2>Vak 6</h2>
-        </div>
+</div>
+
+<!-- Titel en welkomstbericht -->
+<h1>This is the index page</h1>
+<br>
+Hello, <?php echo $user_data['user_name']; ?>
+
+<!-- Vakken -->
+<div class="container">    
+    <div class="box" onclick="location.href='waaijer.php';">
+        <h2>Vak 1</h2>
     </div>
-            <br>
-    <h1>informatie over dragonlegends</h1>
-    <p>shout out naar furkie21 voor deze webshop we konden nu helemaal niks doen</p>
-    <p>dragonlegends zijn een groep vrienden van 4. we hebben het hier over <br>Milan van Deelen, Micheal Davelaar, Furkan Sarikaya en Yvan van dijk.</p>
-    <p>wij moeten een opdracht maken voor school vandaar deze webshop</p>
-    <footer class="footer">
+    <div class="box">
+        <h2>Vak 2</h2>
+    </div>
+    <div class="box">
+        <h2>Vak 3</h2>
+    </div>
+    <div class="box">
+        <h2>Vak 4</h2>
+    </div>
+    <div class="box">
+        <h2>Vak 5</h2>
+    </div>
+    <div class="box">
+        <h2>Vak 6</h2>
+    </div>
+</div>
+
+<!-- Informatie over Dragonlegends -->
+<br>
+<h1>Informatie over Dragonlegends</h1>
+<p>Shout out naar Furkie21 voor deze webshop. We konden nu helemaal niks doen.</p>
+<p>Dragonlegends zijn een groep vrienden van 4. We hebben het hier over Milan van Deelen, Micheal Davelaar, Furkan Sarikaya en Yvan van Dijk.</p>
+<p>Wij moeten een opdracht maken voor school, vandaar deze webshop.</p>
+
+<!-- Footer -->
+<footer class="footer">
     <div class="footer-content">
+        <!-- Over Ons -->
         <div class="footer-section about">
             <h2>Over Ons</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non suscipit enim.</p>
@@ -67,6 +80,7 @@ include "nav.php"
                 <a href="#"><i class="fab fa-linkedin"></i></a>
             </div>
         </div>
+        <!-- Links -->
         <div class="footer-section links">
             <h2>Links</h2>
             <ul>
@@ -77,6 +91,7 @@ include "nav.php"
                 <li><a href="#">Contact</a></li>
             </ul>
         </div>
+        <!-- Contacteer Ons -->
         <div class="footer-section contact-form">
             <h2>Contacteer Ons</h2>
             <form action="#" method="post">
