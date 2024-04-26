@@ -104,16 +104,59 @@ function crudklant() {
     $txt = "<h1>Crud klant</h1><nav><a href='insert_klant.php'>Voeg nieuw product toe</a></nav><br>";
     echo $txt;
 
-    // Get data from the database
-    $result = getData(CRUD_TABLE);
+    // Zoekformulier
+    echo "
+    <form action='#' method='post'>
+        <label for='klantid'>Klant ID</label>
+        <input type='text' name='klantid'><br>
+        <label for='klant_naam'>Klant Naam</label>
+        <input type='text' name='klant_naam'><br>
+        <label for='adres'>Adres</label>
+        <input type='text' name='adres'><br>
+        <label for='plaats'>Plaatsnaam</label>
+        <input type='text' name='plaats'><br>
+        <input type='submit' value='Zoeken' name='search'>
+    </form>
+    ";
 
-    // Check if $result is an array and not empty before calling printCrudklant
+    if(isset($_POST['search'])){
+        $result = searchKlant($_POST['klantid'], $_POST['klant_naam'], $_POST['adres'], $_POST['plaats']);
+    } else {
+        // Pakt data van de database
+        $result = getData(CRUD_TABLE);
+    }
+
+    // Checkt of $result een array is en niet leeg is voordat het printCrudklant roept
     if (is_array($result) && !empty($result)) {
         // Print table
         printCrudklant($result);
     } else {
-        echo "No data found."; // Handle case where no data is retrieved
+        echo "No data found."; // womp womp geen data
     }
+}
+
+// Function die zoekt op klantid, klant_naam, adres en plaats
+function searchKlant($klantid, $klant_naam, $adres, $plaats){
+    // Connect database
+    $conn = connectDb();
+
+    // Search
+    $sql = "SELECT * FROM " . CRUD_TABLE . " WHERE klantid LIKE :klantid AND klant_naam LIKE :klant_naam AND adres LIKE :adres AND plaats LIKE :plaats";
+    $query = $conn->prepare($sql);
+
+    // parameters
+    $query->bindValue(':klantid', "%$klantid%");
+    $query->bindValue(':klant_naam', "%$klant_naam%");
+    $query->bindValue(':adres', "%$adres%");
+    $query->bindValue(':plaats', "%$plaats%");
+
+    // Execute query
+    $query->execute();
+
+    // Fetch data
+    $result = $query->fetchAll(PDO::FETCH_ASSOC);
+
+    return $result;
 }
 
 // Function 'printCrudklant' print een HTML-table met data uit $result 
