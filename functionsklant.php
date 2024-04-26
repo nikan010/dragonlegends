@@ -116,7 +116,7 @@ function crudklant() {
     }
 }
 
-// Function 'printCrudproduct' print een HTML-table met data uit $result 
+// Function 'printCrudklant' print een HTML-table met data uit $result 
 // En wijzig + verwijder knop
 function printCrudklant($result){
     // Zet de hele table in een variable en print hem 1 keer 
@@ -145,13 +145,13 @@ function printCrudklant($result){
         
         // Wijzig knopje
         $table .= "<td>
-            <form method='post' action='update.php?klantid=$row[klantid]' >       
+            <form method='post' action='updateklant.php?klantid=$row[klantid]' >       
                 <button>Wijzg</button>	 
             </form></td>";
 
         // Delete knopje
         $table .= "<td>
-            <form method='post' action='delete.php?klantid=$row[klantid]' >       
+            <form method='post' action='deleteklant.php?klantid=$row[klantid]' >       
                 <button>Verwijder</button>	 
             </form></td>";
 

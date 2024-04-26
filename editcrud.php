@@ -52,6 +52,12 @@ print_r($result);
 }
 </style>
 <body>
+<nav>
+<?php 
+// Hiermee word de nav.php bestand opgehaald en word de Navbar geshowed
+include "nav.php"
+?>
+</nav>   
 
 <h1>vuurwerk Toevoegen</h1>
 

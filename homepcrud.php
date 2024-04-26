@@ -18,7 +18,7 @@ include "nav.php"
     <a href="insertcrud.php">toevoegen</a>
 
     <?php
-    
+    // Hiermee word de selectcrud.php bestand opgehaald
     include "selectcrud.php"
     
     ?>

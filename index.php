@@ -17,25 +17,14 @@ $user_data = check_login($con);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<<<<<<< Updated upstream
     <title>my website</title>
     <link rel="stylesheet" href="index.css">
 </head>
-=======
-    <title>My Website</title>
-</head>
-
->>>>>>> Stashed changes
 <body>
-<div class="navbar">
-        <a href="https://www.techniekcollegerotterdam.nl/"><img class="pipi" src="img/logo.png" width="15%" alt="TCR"></a>
-        <div class="nav-links">
-        <a href="homepcrud.php">CRUD Vuurwerk</a>
-        <a href="homepcrudbestellingen.php">CRUD Bestellingen</a>
-        <a href="mainklant.php">CRUD klant</a>
-        <a href="logout.php">logout</a>
-       
-            </div>
+<?php
+// Hiermee word de nav.php bestand opgehaald en word de Navbar geshowed
+include "nav.php"
+?>
     </div>
 </div>
 
