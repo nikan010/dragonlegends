@@ -1,19 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vuurwerk zoeken</title>
+</head>
+<body>
+<form action="" method="GET">
+    <label for="search">Zoek:</label>
+    <input type="text" id="search" name="search" placeholder="Voer naam of soort in">
+    <button type="submit">Zoeken</button>
+</form>
+
 <?php
-//conect database
+//connectie met de database
 include "connectcrud.php";
 
 //maak een query
 $sql = "SELECT * FROM vuurwerk";
-//prepare  query
+
+//voeg zoekfunctionaliteit toe als er een zoekopdracht is ingediend
+if(isset($_GET['search']) && !empty($_GET['search'])) {
+    $search = $_GET['search'];
+    //zoek op zowel naam als soort
+    $sql .= " WHERE naam LIKE '%$search%' OR soort LIKE '%$search%'";
+}
+
+//bereid de query voor
 $stmt = $conn->prepare($sql);
+
 //uitvoeren
 $stmt->execute();
+
 //ophalen alle data
 $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-
 echo "<br>";
-
 
 //print de data in een rij
 echo "<table border=1px>";
@@ -34,8 +56,7 @@ echo "<tr>
 <th>edit</th>
 <th>delete</th>
 <th>vuurwerkid</th>
-</tr>
-";
+</tr>";
 
 foreach ($result as $row) {
     echo "<tr>";
@@ -54,17 +75,10 @@ foreach ($result as $row) {
     echo "<td><a href='editcrud.php?id=" . $row['vuurwerkid'] . "'>" . "wijzig</a></td>";
     echo "<td><a href='deletecrud.php?id=" . $row['vuurwerkid'] . "'>" . "verwijder</a></td>";
     echo "<td>". $row['vuurwerkid'] . "</td>";
+    echo "</tr>";
 }
 echo "</table>";
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
+
 </body>
 </html>

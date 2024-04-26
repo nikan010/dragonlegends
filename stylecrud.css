@@ -1,8 +1,8 @@
 
 
 body {
-    font-family: Arial, sans-serif;
-    background-image: url("img/contact.gif");
+         font-family: Arial, sans-serif;
+        background-image: url("img/contact.gif");
         background-attachment: fixed; /* Hiermee wordt de achtergrondafbeelding vastgezet */
         text-align: center;
         background-repeat: no-repeat;

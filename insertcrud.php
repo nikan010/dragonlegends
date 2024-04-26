@@ -7,6 +7,26 @@
     <title>vuurwerk Formulier</title>
     <link rel="stylesheet" href="stylecrud.css">
 </head>
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    background-image: url("img/contact.gif");
+        background-attachment: fixed; /* Hiermee wordt de achtergrondafbeelding vastgezet */
+        text-align: center;
+        background-repeat: no-repeat;
+        color: white;
+        background-size: cover;
+        justify-content: center;
+  }
+ 
+ /*stijl voor de table */
+ table {
+    margin-left: auto;
+    margin-right: auto;
+    border: 3px solid white;
+    background-color: transparent; /* Dit zorgt ervoor dat de achtergrondkleur van de tabel transparant is */
+}
+</style>
 <body>
 
 <nav>
@@ -62,6 +82,7 @@ include "nav.php"
 
 </body>
 </html>
+
 <?php
 if ($_SERVER["REQUEST_METHOD"]  == "POST") {
     echo "Er is gepost<br>";
