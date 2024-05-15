@@ -89,6 +89,7 @@ session_start();
         <input id="button" type="submit" value="login"><br><br>
 
         <a href="signup.php">click to sign up</a>
+        
         </form>
     </div>
 </body>
