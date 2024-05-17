@@ -50,7 +50,7 @@ print_r($result);
     border: 3px solid white;
     background-color: transparent; /* Dit zorgt ervoor dat de achtergrondkleur van de tabel transparant is */
 }
-</style>
+</style>dragonlegends/adminlogin/login.css
 <body>
 <nav>
 <?php 

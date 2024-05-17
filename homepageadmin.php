@@ -2,6 +2,12 @@
 // Start de sessie
 session_start();
 
+if (!isset($_SESSION['username']) || !$_SESSION['is_admin']) {
+    header("Location: login.php");
+    exit;
+}
+
+
 // Inclusie van het bestand 'connection.php' dat de databaseverbinding bevat
 include("config.php");
 
@@ -11,6 +17,7 @@ include("config.php");
 // Controleren of de gebruiker is ingelogd
 //$user_data = check_login($con);
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
