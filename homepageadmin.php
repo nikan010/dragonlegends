@@ -27,6 +27,18 @@ include("config.php");
     <title>my website</title>
     <link rel="stylesheet" href="index.css">
 </head>
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    background-image: url("img/vivif.gif");
+        background-attachment: fixed; /* Hiermee wordt de achtergrondafbeelding vastgezet */
+        text-align: center;
+        background-repeat: no-repeat;
+        color: white;
+        background-size: cover;
+        justify-content: center;
+  }
+ </style>
 <body>
 <?php
 // Hiermee word de nav.php bestand opgehaald en word de Navbar geshowed
